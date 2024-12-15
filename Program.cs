@@ -78,8 +78,6 @@ namespace Codex_Ipsa.Installer
             WshShell shell = new WshShell();
             string shortcutAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + @"\Codex-Ipsa Launcher.lnk";
             IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutAddress);
-            shortcut.Description = "New shortcut for a Notepad";
-            shortcut.Hotkey = "Ctrl+Shift+N";
             shortcut.TargetPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\.codexipsa\MCLauncher.exe";
             shortcut.Save();
         }
